@@ -3,7 +3,10 @@ let userInput = document.getElementById("user-input");
 
 // Update this to your local backend URL
 const API_PATH = "chat/";
-const API_URI = process.env.API_URL + API_PATH
+const API_URL = window.location.hostname === "localhost" 
+    ? "http://localhost:8000/"  // Local backend
+    : "https://ai-chat-backend-amwb.onrender.com/";  // Production backend
+const API_URI = API_URL + API_PATH
 
 async function sendMessage() {
     let userText = userInput.value.trim();
