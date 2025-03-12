@@ -2,7 +2,8 @@ let chatBox = document.getElementById("chat-box");
 let userInput = document.getElementById("user-input");
 
 // Update this to your local backend URL
-const API_URL = "http://localhost:8000/chat/";
+const API_PATH = "chat/";
+const API_URI = process.env.API_URL + API_PATH
 
 async function sendMessage() {
     let userText = userInput.value.trim();
@@ -13,7 +14,7 @@ async function sendMessage() {
 
     appendMessage("AI is typing...", "bot");
 
-    const response = await fetch(API_URL, {
+    const response = await fetch(API_URI, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ prompt: userText }),
