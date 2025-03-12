@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>DeepSeek AI Chat</title>
+    <style>
+        body { font-family: Arial, sans-serif; text-align: center; }
+        #chat-box { width: 80%; max-width: 600px; height: 400px; overflow-y: auto; border: 1px solid #ccc; padding: 10px; margin: auto; }
+        .user { color: blue; text-align: right; }
+        .bot { color: green; text-align: left; }
+    </style>
+</head>
+<body>
+    <h1>Chat with DeepSeek AI</h1>
+    <div id="chat-box"></div>
+    <input type="text" id="user-input" placeholder="Type a message..." onkeypress="if(event.key === 'Enter') sendMessage();">
+    <button onclick="sendMessage()">Send</button>
+    <script src="script.js"></script>
+</body>
+</html>
